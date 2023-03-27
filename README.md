@@ -17,6 +17,10 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 5. Clone the `SimpleJSON` repository to your iOS device (`git clone git@github.com:simplejson/simplejson.git`)
 6. cd into the `simplejson` directory
 7. Install the `simplejson` package using `python setup.py install`
-8. cd into the `iOS-REST-Battery` repository
+8. cd into the `iOS-REST-Battery` directory
 9. Install `batterydata-arm32.deb` using `dpkg -i batterydata-arm32.deb`
 10. Start the script by running `python script.py`
+
+## Updating
+1. cd into the `iOS-REST-Battery` directory
+2. Run `git pull`
