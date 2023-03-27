@@ -34,3 +34,21 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 3. Run `git pull`
 4. Start the script again by running `python script.py`
 5. Detach from the screen session by pressing `Ctrl + A` then `Ctrl + D`
+
+## Usage
+If you are using this sctipt to display the battery status of your iOS device on Home Assistant, you can use the following configuration as an example:
+
+```yaml
+sensor:
+  - platform: rest
+    name: iPad battery status
+    unique_id: ipad_battery_status
+    resource: http://<iPad IP>:8000/status
+    method: GET
+    value_template: "{{ value_json.Battery }}"
+    unit_of_measurement: "%"
+    device_class: battery
+    json_attributes:
+      - Battery
+      - Battery status
+```
