@@ -8,22 +8,15 @@ def get_percentage():
 def get_charging_status():
     status = (subprocess.Popen(['batterydata | grep "Is Charging" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]).strip()
 
-    return "true" if status == '1' else "false"
+    return "Charging" if status == '1' else "NotCharging"
 
 class serverHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path == '/percentage':
+        if self.path == '/status':
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            data = get_percentage()
-            self.wfile.write(json.dumps({'percentage': data}).encode())
-        elif self.path == '/charging':
-            self.send_response(200)
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
-            data = get_charging_status()
-            self.wfile.write(json.dumps({'charging': data}).encode())
+            self.wfile.write(json.dumps({'Battery': get_percentage(), 'Battery status': get_charging_status()}).encode())
         else:
             self.send_error(404)
 
