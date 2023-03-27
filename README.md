@@ -19,8 +19,18 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 7. Install the `simplejson` package using `python setup.py install`
 8. cd into the `iOS-REST-Battery` directory
 9. Install `batterydata-arm32.deb` using `dpkg -i batterydata-arm32.deb`
-10. Start the script by running `python script.py`
+10. Start the script by running `python script.py` to test it out
+11. Press `Ctrl + C` to stop the script
+
+## Running (You will need to do this every time you reboot your device)
+1. cd into the `iOS-REST-Battery` directory
+2. Create a new screen session by running `screen -S battery`
+3. Start the script by running `python script.py`
+4. Detach from the screen session by pressing `Ctrl + A` then `Ctrl + D`
 
 ## Updating
-1. cd into the `iOS-REST-Battery` directory
-2. Run `git pull`
+1. Reattach to the screen session by running `screen -r battery`
+2. Press `Ctrl + C` to stop the script
+3. Run `git pull`
+4. Start the script again by running `python script.py`
+5. Detach from the screen session by pressing `Ctrl + A` then `Ctrl + D`
