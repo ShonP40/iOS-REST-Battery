@@ -3,10 +3,10 @@ import subprocess
 import simplejson as json
 
 def get_percentage():
-    return subprocess.Popen(['batterydata | grep "Current Capacity" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]
+    return (subprocess.Popen(['batterydata | grep "Current Capacity" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]).strip()
 
 def get_charging_status():
-    status = subprocess.Popen(['batterydata | grep "Is Charging" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]
+    status = (subprocess.Popen(['batterydata | grep "Is Charging" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]).strip()
 
     if status == '1':
         return 'true'
