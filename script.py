@@ -1,12 +1,12 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import subprocess
-import json
+import simplejson as json
 
 def get_percentage():
-    return subprocess.run(['batterydata | grep "Current Capacity" | awk \'{print $4}\''], capture_output=True, text=True, shell=True).stdout
+    return subprocess.Popen(['batterydata | grep "Current Capacity" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]
 
 def get_charging_status():
-    return subprocess.run(['batterydata | grep "Is Charging" | awk \'{print $4}\''], capture_output=True, text=True, shell=True).stdout
+    return subprocess.Popen(['batterydata | grep "Is Charging" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]
 
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -26,7 +26,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.send_error(404)
 
 def main():
-    server = HTTPServer(('localhost', 8000), MyHandler)
+    server = HTTPServer(('0.0.0.0', 8000), MyHandler)
     print('Starting server, use <Ctrl-C> to stop')
     server.serve_forever()
 
