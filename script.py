@@ -8,10 +8,7 @@ def get_percentage():
 def get_charging_status():
     status = (subprocess.Popen(['batterydata | grep "Is Charging" | awk \'{print $4}\''], shell=True, stdout=subprocess.PIPE).communicate()[0]).strip()
 
-    if status == '1':
-        return 'true'
-    else:
-        return 'false'
+    return "true" if status == '1' else "false"
 
 class serverHandler(BaseHTTPRequestHandler):
     def do_GET(self):
