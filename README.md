@@ -15,7 +15,7 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 3. Run `cat /path/to/<your key>.pub` and copy its contents to this [GitHub](https://github.com/settings/ssh/new) page
 4. Clone this repository to your iOS device (`git clone git@github.com:ShonP40/iOS-REST-Battery.git`)
 5. Clone the `SimpleJSON` repository to your iOS device (`git clone git@github.com:simplejson/simplejson.git`)
-6. cd into the `SimpleJSON` repository
+6. cd into the `simplejson` directory
 7. Install the `simplejson` package using `python setup.py install`
 8. cd into the `iOS-REST-Battery` repository
 9. Install `batterydata-arm32.deb` using `dpkg -i batterydata-arm32.deb`
