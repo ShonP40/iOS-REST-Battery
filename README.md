@@ -26,14 +26,14 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 1. cd into the `iOS-REST-Battery` directory
 2. Create a new screen session by running `screen -S battery`
 3. Start the script by running `python script.py`
-4. Detach from the screen session by pressing `Ctrl + A` then `Ctrl + D`
+4. Detach from the screen session by pressing `Ctrl + A + D`
 
 ## Updating
 1. Reattach to the screen session by running `screen -r battery`
 2. Press `Ctrl + C` to stop the script
 3. Run `git pull`
 4. Start the script again by running `python script.py`
-5. Detach from the screen session by pressing `Ctrl + A` then `Ctrl + D`
+5. Detach from the screen session by pressing `Ctrl + A + D`
 
 ## Usage
 If you are using this sctipt to display the battery status of your iOS device on Home Assistant, you can use the following configuration as an example:
