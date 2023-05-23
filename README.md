@@ -6,6 +6,7 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 ### Requirements
 - Jailbroken iOS device (only 32-bit devices are supported at the moment)
 - Terminal/SSH access to your iOS device
+- (Recommended) A tweak that keeps Wi-Fi on even when the device is locked (like `iNoSleep`)
 - Git CLI (`apt-get install git`) on your iOS device
 - Python 2.5.1 (`apt-get install python`) on your iOS device
 
