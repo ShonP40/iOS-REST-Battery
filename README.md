@@ -9,6 +9,7 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 - (Recommended) A tweak that keeps Wi-Fi on even when the device is locked (like `iNoSleep`)
 - Git CLI (`apt-get install git`) on your iOS device
 - Python 2.5.1 (`apt-get install python`) on your iOS device
+- Screen (`apt-get install screen`) on your iOS device
 
 ## Setup
 1. Meet the requirements
