@@ -39,7 +39,7 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 5. Detach from the screen session by pressing `Ctrl + A + D`
 
 ## Usage
-If you are using this sctipt to display the battery status of your iOS device on Home Assistant, you can use the following configuration as an example:
+If you are using this script to display the battery status of your iOS device on Home Assistant, you can use the following configuration as an example:
 
 ```yaml
 sensor:
@@ -54,4 +54,5 @@ sensor:
     json_attributes:
       - Battery
       - Battery status
+    timeout: 60
 ```
