@@ -29,8 +29,8 @@ A REST API for reporting the battery percentage of jailbroken iOS devices
 1. Meet the requirements
 2. Clone this repository to your iOS device (`git clone https://github.com/ShonP40/iOS-REST-Battery`)
 3. cd into the `iOS-REST-Battery` directory
-4. Install `batterydata` using `dpkg -i batterydata-arm64-rootfull.deb` or `dpkg -i batterydata-arm64-rootless.deb` depending on your setup
-5. Start the script by running `python3 battery-arm64.py` to test it out
+4. Install `batterydata` using `dpkg -i batterydata-arm64-rootfull.deb` or `dpkg -i batterydata-arm64-rootless.deb` (depending on your setup)
+5. Start the script by running `python3 battery-arm64-rootfull.py` or `python3 battery-arm64-rootless.py` (depending on your setup) to test it out
 6. Press `Ctrl + C` to stop the script
 
 ## Running (You will need to do this every time you reboot your device)
