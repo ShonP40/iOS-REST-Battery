@@ -7,7 +7,7 @@ import errno
 from socketserver import ThreadingMixIn
 
 def get_percentage():
-    return run_cmd('batterydata | grep "Current Capacity" | awk \'{print $4}\'').strip()
+    return run_cmd('batterydata | grep "StateOfCharge" | awk \'{print $3}\'').strip().rstrip(';')
 
 def get_charging_status():
     status = run_cmd('batterydata | grep "Is Charging" | awk \'{print $4}\'').strip()
